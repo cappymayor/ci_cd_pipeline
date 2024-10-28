@@ -3,9 +3,8 @@ name: ci
 on:
   workflow_run:
     workflows: ["CI pipeline"]
-    types: [completed]
-    branches:
-      - '**'
+    types: 
+      - completed
 
 jobs:
   build:
