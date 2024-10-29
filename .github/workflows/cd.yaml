@@ -41,6 +41,16 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
 
+      - uses: yumafuu/docker-build-ecr-push-action@v1
+        with:
+          aws_role_arn: arn:aws:iam::340752803932:role/github-action
+          aws_region: eu-central-1
+          context: .
+          dockerfile: .
+          ecr_repo: sample-repo
+          tag: ${{ github.sha }}
+
+
 
       # - name: checkout repository
       #   uses: actions/checkout@v2
