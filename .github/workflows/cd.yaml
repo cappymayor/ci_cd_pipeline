@@ -23,14 +23,13 @@ jobs:
           repo-token: ${{ secrets.TOKEN_SECRET }}
           wait-interval: 10
 
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4 # More information on this action can be found below in the 'AWS Credentials' section
+      - name: checkout repository
+        uses: actions/checkout@v2
+      
+      - name: setting up python environment
+        uses: actions/setup-python@v2
         with:
-          role-to-assume: arn:aws:iam::340752803932:role/github-action
-          aws-region: eu-central-1
+          python-version: "3.9.0"
       
       # - name: install dependencies
       #   run: pip install -r requirements.txt
