@@ -19,7 +19,7 @@ jobs:
         uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
-          check-name: 'CI Pipeline'
+          check-name: 'checkout'
           repo-token: ${{ secrets.TOKEN_SECRET }}
           wait-interval: 10
 
