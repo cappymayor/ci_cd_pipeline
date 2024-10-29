@@ -3,7 +3,7 @@ name: CD Pipeline
 
 on:
   push:
-    branches:
+    tags:
       - "**" # matches every branch
 
 permissions:
