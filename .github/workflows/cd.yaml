@@ -16,11 +16,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Wait for CI to succeed
-        if: ${{github.ref}} = "refs/heads/master"
         uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
-          check-name: 'checkout'
+          check-name: 'Run Test'
           repo-token: ${{ secrets.TOKEN_SECRET }}
           wait-interval: 10
 
