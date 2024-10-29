@@ -1,4 +1,4 @@
-name: ci
+name: CD Pipeline
 
 
 on:
@@ -19,7 +19,7 @@ jobs:
         uses: lewagon/wait-on-check-action@v1.3.4
         with:
           ref: ${{ github.ref }}
-          check-name: 'Run tests'
+          check-name: 'CI Pipeline'
           repo-token: ${{ secrets.TOKEN_SECRET }}
           wait-interval: 10
 
