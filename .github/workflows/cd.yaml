@@ -15,6 +15,14 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
+      - name: Wait for CI to succeed
+        uses: lewagon/wait-on-check-action@v1.3.4
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'Run tests'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          wait-interval: 10
+
       - name: checkout repository
         uses: actions/checkout@v2
       
