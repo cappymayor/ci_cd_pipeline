@@ -1,15 +1,15 @@
 name: CD Pipeline
 
 
-on:
-  push:
-    branches:
-      - "**" # matches every branch
 # on:
-#   workflow_run:
-#     workflows: ["CI pipeline"]
-#     types: 
-#       - completed
+#   push:
+#     branches:
+#       - "**" # matches every branch
+on:
+  workflow_run:
+    workflows: ["CI pipeline"]
+    types: 
+      - completed
 
 jobs:
   build:
