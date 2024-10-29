@@ -45,8 +45,6 @@ jobs:
         with:
           aws_role_arn: arn:aws:iam::340752803932:role/github-action
           aws_region: eu-central-1
-          context: .
-          dockerfile: .
           ecr_repo: sample-repo
           tag: ${{ github.sha }}
 
